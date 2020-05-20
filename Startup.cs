@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EmojiCharades.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using EmojiCharades.Hubs;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmojiCharades
 {
@@ -26,6 +28,10 @@ namespace EmojiCharades
         {
             services.AddControllersWithViews();
             services.AddSignalR();
+
+            // DB
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlite("Data Source=charades.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
