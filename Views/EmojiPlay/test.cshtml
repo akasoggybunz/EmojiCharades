@@ -3,7 +3,34 @@
     ViewData["Title"] = "test";
 }
 
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<div id="quiz"></div>
+<button id="submit">Get Results</button>
+<div id="results"></div>
 
 
 
-<input data-emojiable="true"/>
+<script>
+
+
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    console.log( "ready!" );
+    getQuestion();
+});
+
+
+    function getQuestion() {
+        $.ajax({
+            url: '@Url.Action("GetQuestion","EmojiPlay")',
+            success: function (data) {
+                console.log(data[0]);
+                var obj = JSON.parse(data[0])
+                $('quiz').html(data[0]);
+            }
+        });
+    }
+
+
+</script>

@@ -1,4 +1,4 @@
-﻿
+﻿@model EmojiCharades.Models.EmojiPlay.IndexModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,7 +15,16 @@
     <!-- End emoji-picker Stylesheets -->
 </head>
 
-<h1>Index</h1>
+@if (!string.IsNullOrEmpty(Model.id))
+{
+    <h1>Charades Party: @Model.id</h1>
+}
+else
+{
+    <h1>Let's Play Charades</h1>
+}
+
+
 
 <div class="container">
     <div class="row">&nbsp;</div>

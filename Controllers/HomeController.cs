@@ -13,17 +13,26 @@ namespace EmojiCharades.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private DataContext _dataContext;
+
         public HomeController(ILogger<HomeController> logger,
             DataContext data)
         {
-            _dataContext = data;
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            var questions = _dataContext.Questions.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(string partyId)
+        {
+            if (!string.IsNullOrEmpty(partyId))
+            {
+                RedirectToAction("Index", "EmojiPlay", new {@id = partyId});
+            }
             return View();
         }
 

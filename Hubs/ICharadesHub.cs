@@ -40,7 +40,7 @@ namespace EmojiCharades.Hubs
         /// <param name="User"></param>
         /// <returns></returns>
         Task AssignQuestionToUser(string User, string question);
-        
+
         /// <summary>
         /// Send 
         /// </summary>
@@ -55,5 +55,19 @@ namespace EmojiCharades.Hubs
         /// </summary>
         /// <returns></returns>
         Task StreamCharadesToHub();
+
+        /// <summary>
+        /// Enter a group
+        /// </summary>
+        /// <param name="groupName">Name of Group</param>
+        /// <returns></returns>
+        Task AddToGroup(string groupName);
+
+        /// <summary>
+        /// Leave a group
+        /// </summary>
+        /// <param name="groupName">Name of Group</param>
+        /// <returns></returns>
+        Task RemoveFromGroup(string groupName);
     }
 }

@@ -2,7 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-body">
+    <h1 class="display-4">Welcome To Emoji Charades!</h1>
+    <form method="post">
+        <div class="form-group">
+            <label for="partyId">Party ID</label>
+            <input type="text" class="form-control" id="partyId" aria-describedby="partyID" placeholder="Enter PARTY ID">
+            <small id="partyIdHelp" class="form-text text-muted">If you are creating a new party put whatever you want here.</small>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="newPartyCheck">
+            <label class="form-check-label" for="newPartyCheck">New Party</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
 </div>
