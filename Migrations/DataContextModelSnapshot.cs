@@ -39,7 +39,7 @@ namespace EmojiCharades.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Answers");
                 });
 
             modelBuilder.Entity("EmojiCharades.Data.Questions", b =>
@@ -59,7 +59,7 @@ namespace EmojiCharades.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Questions");
                 });
 #pragma warning restore 612, 618
         }

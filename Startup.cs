@@ -31,7 +31,7 @@ namespace EmojiCharades
 
             // DB
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlite("Data Source=charades.db"));
+                options.UseSqlite(Configuration["ConnectionStrings:DataContext"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

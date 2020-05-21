@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmojiCharades.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200520222547_InitialCreate")]
+    [Migration("20200521174511_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,7 @@ namespace EmojiCharades.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Answers");
                 });
 
             modelBuilder.Entity("EmojiCharades.Data.Questions", b =>
@@ -61,7 +61,7 @@ namespace EmojiCharades.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Questions");
                 });
 #pragma warning restore 612, 618
         }

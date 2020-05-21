@@ -8,22 +8,7 @@ namespace EmojiCharades.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Blogs",
-                columns: table => new
-                {
-                    id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Question = table.Column<string>(nullable: true),
-                    Tags = table.Column<string>(nullable: true),
-                    NSFW = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Blogs", x => x.id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Posts",
+                name: "Answers",
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
@@ -36,17 +21,32 @@ namespace EmojiCharades.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Posts", x => x.id);
+                    table.PrimaryKey("PK_Answers", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Questions",
+                columns: table => new
+                {
+                    id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Question = table.Column<string>(nullable: true),
+                    Tags = table.Column<string>(nullable: true),
+                    NSFW = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Questions", x => x.id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Blogs");
+                name: "Answers");
 
             migrationBuilder.DropTable(
-                name: "Posts");
+                name: "Questions");
         }
     }
 }

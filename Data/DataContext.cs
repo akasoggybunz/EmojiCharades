@@ -11,6 +11,11 @@ namespace EmojiCharades.Data
     /// </summary>
     public class DataContext : DbContext
     {
+        public DataContext(DbContextOptions<DataContext> options): base(options)
+        {
+            
+        }
+
         public DbSet<Questions> Questions { get; set; }
         public DbSet<Answers> Answers { get; set; }
 
